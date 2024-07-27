@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,24 +28,26 @@
         .container {
             width: 80%;
             max-width: 1200px;
-            margin: 0 auto
+            margin: 0 auto;
         }
 
         /* Header */
         header {
-            background: #333;
+            background: #6b6e70;
             color: white;
             padding: 50px 0;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 40px;
             font-family: 'Poppins', sans-serif; /* Header font */
         }
 
         nav ul {
             list-style: none;
             float: right;
+            margin: 0; /* Reset margin */
+            padding: 0; /* Reset padding */
         }
 
         nav ul li {
@@ -56,6 +58,7 @@
         nav ul li a {
             color: white;
             text-decoration: none;
+            font-size: 16px; /* Adjust font size as needed */
         }
 
         /* Hero Section */
@@ -97,32 +100,49 @@
             margin-bottom: 30px;
         }
 
-        .search-box {
+        /* Button container for alignment */
+        .button-container {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+        }
+
+        /* Common button styling */
+        .button-container a {
             display: inline-block;
-            max-width: 100%;
-        }
-
-        .search-box input {
-            width: calc(100% - 120px); /* Adjust width based on button size */
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px 0 0 4px;
+            padding: 10px 20px;
+            border-radius: 4px;
             font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            color: #ffffff;
+            border: 1px solid transparent;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
         }
 
-        .search-box button {
-            width: 200px; /* Adjust width as needed */
-            padding: 10px;
-            border: 1px solid #007bff;
-            border-radius: 0 4px 4px 0;
-            background: #007bff;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
+        /* Sign Up Button */
+        .button-container .sign-up {
+            background-color: #0077b5; /* LinkedIn blue */
+            border-color: #0077b5; /* Match border with background */
         }
 
-        .search-box button:hover {
-            background-color: #0056b3;
+        .button-container .sign-up:hover {
+            background-color: #005582; /* Darker blue on hover */
+            border-color: #005582; /* Match border with background */
+            color: #ffffff;
+        }
+
+        /* Log In Button */
+        .button-container .log-in {
+            background-color: #ffffff; /* White background */
+            border-color: #0077b5; /* LinkedIn blue border */
+            color: #0077b5; /* LinkedIn blue text */
+        }
+
+        .button-container .log-in:hover {
+            background-color: #f0f2f5; /* Light gray on hover */
+            border-color: #0077b5; /* Match border with background */
+            color: #0077b5; /* LinkedIn blue text */
         }
 
         /* Featured Jobs */
@@ -233,14 +253,13 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <!-- Ensure the path is correct and the image exists -->
             <img src="{% static 'media/6943.jpg' %}" alt="Lady Working Hard">
             <div class="hero-content">
-                <h2>Find Your Next Career Opportunity</h2>
+                <h2>Find Your Next Career Opportunity!</h2>
                 <p>Connect with employers and discover your dream job today.</p>
-                <div class="search-box">
-                    <input type="text" placeholder="Search for jobs, companies or keywords">
-                    <button>Search</button>
+                <div class="button-container">
+                    <a href="#sign-up" class="sign-up">Sign Up</a>
+                    <a href="#log-in" class="log-in">Log In</a>
                 </div>
             </div>
         </div>
@@ -253,17 +272,17 @@
             <div class="job-list">
                 <div class="job-item">
                     <h3>Software Engineer</h3>
-                    <p>Company Name</p>
+                    <p>SoftWave Innovations</p>
                     <a href="#">View Details</a>
                 </div>
                 <div class="job-item">
                     <h3>Marketing Manager</h3>
-                    <p>Company Name</p>
+                    <p>MarketEdge Strategies</p>
                     <a href="#">View Details</a>
                 </div>
                 <div class="job-item">
                     <h3>Graphic Designer</h3>
-                    <p>Company Name</p>
+                    <p>GraphixHub Agency</p>
                     <a href="#">View Details</a>
                 </div>
             </div>
@@ -282,7 +301,6 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
-            
             <p>Have questions? Reach out to us!</p>
             <form>
                 <label for="name">Name:</label>
