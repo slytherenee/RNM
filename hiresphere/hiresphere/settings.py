@@ -1,3 +1,4 @@
+import os
 """
 Django settings for hiresphere project.
 
@@ -26,7 +27,8 @@ SECRET_KEY = 'django-insecure-_9$mtpu61l0t*v3hnp24ivzdx_tl^=h)1yim&9(h@s8trzd_mf
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'jobs/static/media')
 
 # Application definition
 

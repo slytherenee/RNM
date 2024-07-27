@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 def job_list(request):
     jobs = Job.objects.all()
-    return render(request, 'jobs/job_list.html', {'jobs': jobs})
+    return render(request, 'jobs/hack2.html', {'jobs': jobs})
 
 def job_detail(request, job_id):
     job = get_object_or_404(Job, id=job_id)

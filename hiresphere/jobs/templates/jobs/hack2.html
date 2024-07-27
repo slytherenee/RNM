@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,14 +28,14 @@
         .container {
             width: 80%;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto
         }
 
         /* Header */
         header {
             background: #333;
             color: white;
-            padding: 10px 0;
+            padding: 50px 0;
         }
 
         .logo {
@@ -62,7 +63,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 50px 0;
+            padding: 60px 0;
             background: #f4f4f4;
         }
 
@@ -232,7 +233,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <img src="6943.jpg" alt="Lady Working Hard">
+            <!-- Ensure the path is correct and the image exists -->
+            <img src="{% static 'media/6943.jpg' %}" alt="Lady Working Hard">
             <div class="hero-content">
                 <h2>Find Your Next Career Opportunity</h2>
                 <p>Connect with employers and discover your dream job today.</p>
@@ -302,4 +304,3 @@
     </footer>
 </body>
 </html>
-
