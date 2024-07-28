@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@400;700&display=swap');
+
+        .job-listing {
+            background: #ffffff;
+            padding: 20px;
+            margin-top: 60px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .job-listing h1 {
+            font-family: 'Poppins', sans-serif;
+            /* Header font */
+            font-size: 24px;
+            color: #333;
+        }
+
+        .job-listing p {
+            font-family: 'Merriweather', serif;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .job-listing button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background: #0077b5;
+            color: white;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+
+        .job-listing button:hover {
+            background: #005582;
+        }
+
+        .job-info {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .job-info h2 {
+            font-family: 'Poppins', sans-serif;
+            /* Header font */
+            font-size: 20px;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .job-info p {
+            font-family: 'Merriweather', serif;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+            
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">HireSphere</h1>
+            <nav>
+                <ul>
+                    <li><a href="search-job.html" target="_blank">Search a Job</a></li>
+                    <li><a href="post-job.html" target="_blank">Post a Job</a></li>
+                    <li><a href="feedback.html" target="_blank">Feedback</a></li>
+                    <li><a href="profile.html" target="_blank">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Job listing -->
+        <div class="job-listing">
+            <h1>Software Engineer</h1>
+            <p>WeByte</p>
+            <p>Parktown, Johannesburg</p>
+            <button id="see-more-btn">See More</button>
+            <!-- Job information container -->
+            <div class="job-info">
+                <p>We are seeking a highly skilled and motivated Software Engineer to join our team. The successful
+                    candidate will be responsible for designing, developing, testing, and maintaining software
+                    applications. This is a fantastic opportunity to work on exciting projects, collaborate with a
+                    talented team, and contribute to the growth and success of our company. <br>
+
+                <h2>Responsibilities:</h2> <br>
+
+                - Design, develop, test, and deploy software applications using various programming languages and
+                technologies<br>
+                - Collaborate with cross-functional teams to identify and prioritize project requirements<br>
+                - Write clean, efficient, and well-documented code<br>
+                - Troubleshoot and debug software issues<br>
+                - Participate in code reviews and contribute to the improvement of the codebase<br>
+                - Stay up-to-date with industry trends and emerging technologies<br>
+                - Collaborate with QA engineers to ensure software quality<br>
+                - Communicate technical information to non-technical stakeholders<br>
+
+                <h2>Requirements:</h2> <br>
+
+                - Bachelor's degree in Computer Science, Software Engineering, or related field<br>
+                - 3+ years of experience in software development<br>
+                - Proficiency in one or more programming languages (e.g., Java, Python, C++, JavaScript)<br>
+                - Experience with software development methodologies (e.g., Agile, Scrum)<br>
+                - Strong problem-solving skills and attention to detail<br>
+                - Excellent communication and teamwork skills<br>
+
+                <h2>Nice to Have:</h2> <br>
+
+                - Experience with cloud-based technologies (e.g., AWS, Azure)<br>
+                - Knowledge of database management systems (e.g., MySQL, MongoDB)<br>
+                - Familiarity with DevOps practices (e.g., continuous integration, continuous deployment)<br>
+                - Experience with front-end development (e.g., HTML, CSS, React)<br>
+
+                <h2>What We Offer:</h2> <br>
+
+                - Competitive salary and benefits package<br>
+                - Opportunity to work on exciting and challenging projects<br>
+                - Collaborative and dynamic work environment<br>
+                - Professional development and growth opportunities<br>
+                - Flexible working hours and remote work options<br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HireSphere. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('see-more-btn').addEventListener('click', function () {
+            var jobInfo = document.querySelector('.job-info');
+            jobInfo.style.display = jobInfo.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+</body>
+
+</html>
