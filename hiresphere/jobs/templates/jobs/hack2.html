@@ -259,6 +259,7 @@
                 margin-left: 0;
                 margin-bottom: 10px;
             }
+        }
     </style>
 </head>
 <body>
@@ -328,15 +329,15 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
-            <p>Have questions? Reach out to us!</p>
-            <form>
+            <form id="contactForm">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Send</button>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+                <p id="successMessage" style="display:none; color:green;">Sent!</p>
             </form>
         </div>
     </section>
@@ -346,5 +347,19 @@
         <p>&copy; 2024 HireSphere. All rights reserved.</p>
     </div>
 </footer>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Simulate form submission
+        setTimeout(function() {
+            document.getElementById('successMessage').style.display = 'block';
+            // Clear form fields
+            document.getElementById('contactForm').reset();
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 3000);
+        }, 1000);
+    });
+</script>
 </body>
 </html>
