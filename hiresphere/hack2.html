@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireSphere - Find Your Next Opportunity!</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@400;700&display=swap');
+
+        /* Reset some default styles */
+        body, h1, h2, h3, h4, p, a, input, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Merriweather', serif; /* Body font */
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        /* Container styling */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: #6b6e70;
+            color: white;
+            padding: 20px 0;
+            font-family: 'Poppins', sans-serif; /* Header font */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 40px;
+            font-family: 'Poppins', sans-serif; /* Header font */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0; /* Reset margin */
+            padding: 0; /* Reset padding */
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px; /* Adjust font size as needed */
+        }
+        
+        body {
+            padding-top: 80px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0;
+            background: #f4f4f4;
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            width: 80%; /* Adjust width as needed */
+            margin-right: 160px;
+        }
+
+        .hero-content {
+            width: 55%; /* Adjust width as needed */
+            text-align: left;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif; /* Heading font */
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* Button container for alignment */
+        .button-container {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+        }
+
+        /* Common button styling */
+        .button-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            color: #ffffff;
+            border: 1px solid transparent;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+        }
+
+        /* Sign Up Button */
+        .button-container .sign-up,
+        .cta-buttons a:nth-child(1) {
+            background-color: #0077b5; /* blue */
+            border-color: #0077b5; /* Match border with background */
+        }
+
+        .button-container .sign-up:hover,
+        .cta-buttons a:nth-child(1):hover {
+            background-color: #005582; /* Darker blue on hover */
+            border-color: #005582; /* Match border with background */
+            color: #ffffff;
+        }
+
+        /* Log In Button */
+        .button-container .log-in,
+        .cta-buttons a:nth-child(2) {
+            background-color: #ffffff; /* White background */
+            border-color: #0077b5; /* LinkedIn blue border */
+            color: #0077b5; /* LinkedIn blue text */
+        }
+
+        .button-container .log-in:hover,
+        .cta-buttons a:nth-child(2):hover {
+            background-color: #f0f2f5; /* Light gray on hover */
+            border-color: #0077b5; /* Match border with background */
+            color: #0077b5; /* LinkedIn blue text */
+        }
+
+        /* Featured Jobs */
+        .featured-jobs {
+            padding: 50px 0;
+        }
+
+        .job-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .job-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+
+        .job-item h3 {
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif; /* Job item heading font */
+        }
+
+        .job-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .job-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* About Us */
+        .about {
+            background: #f4f4f4;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 18px;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif; /* Contact form label font */
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Bottom CTA Section */
+        .cta-section {
+            background: #ffffff;
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .cta-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            color: #ffffff;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+        }
+
+        .cta-buttons a:nth-child(1) {
+            background-color: #0077b5;
+            border-color: #0077b5;
+        }
+
+        .cta-buttons a:nth-child(1):hover {
+            background-color: #005582;
+            border-color: #005582;
+            color: #ffffff;
+        }
+
+        .cta-buttons a:nth-child(2) {
+            background-color: #ffffff;
+            border-color: #0077b5;
+            color: #0077b5;
+        }
+
+        .cta-buttons a:nth-child(2):hover {
+            background-color: #f0f2f5;
+            border-color: #0077b5;
+            color: #0077b5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <h1 class="logo">HireSphere</h1>
+                <nav>
+                    <ul>
+                        <li><a href="feedback.html" target="_blank">Feedback</a></li>
+                        <li><a href="#featured">Featured Jobs</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="{% static 'media/6943.jpg' %}" alt="Lady Working Hard">
+            <div class="hero-content">
+                <h2>Find Your Next Career Opportunity!</h2>
+                <p>Connect with employers and discover your dream job today.</p>
+                <div class="button-container">
+                    <a href="#sign-up" class="sign-up">Sign Up</a>
+                    <a href="#log-in" class="log-in">Log In</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Jobs -->
+    <section id="featured" class="featured-jobs">
+        <div class="container">
+            <h2>Featured Jobs</h2>
+            <div class="job-list">
+                <div class="job-item">
+                    <h3>Software Engineer</h3>
+                    <p>SoftWave Innovations</p>
+                    <a href="#">View Details</a>
+                </div>
+                <div class="job-item">
+                    <h3>Marketing Manager</h3>
+                    <p>MarketEdge Co.</p>
+                    <a href="#">View Details</a>
+                </div>
+                <div class="job-item">
+                    <h3>UX Designer</h3>
+                    <p>DesignPros</p>
+                    <a href="#">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>HireSphere is dedicated to connecting job seekers with their next great opportunity. Our platform offers a wide range of job listings from top companies in South Africa!</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+                <p id="successMessage" style="display:none; color:green;">Sent!</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Bottom CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Take the Next Step?</h2>
+            <div class="cta-buttons">
+                <a href="post-job.html" target="_blank">Post a Job</a>
+                <a href="search-job.html" target="_blank">Search a Job</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HireSphere. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Simulate form submission
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'block';
+                // Clear form fields
+                document.getElementById('contactForm').reset();
+                setTimeout(function() {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 3000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
+
