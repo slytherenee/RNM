@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Job, Company
 from django.http import HttpResponse
-from django.contrib.auth import login
+from django.contrib import messages
+from django.contrib.auth import login, authenticate
 from .forms import CompanySignUpForm, UserSignUpForm
 
 def index(request):
@@ -21,8 +22,24 @@ def create_job(request):
 def sign_up(request):
     return render(request, 'jobs/signup.html')
 
-def log_in(request):
-    return render(request, 'jobs/login.html')
+def user_login(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        account_type = request.POST['account_type']
+
+        user = authenticate(request, username=email, password=password)
+
+        if user is not None:
+            login(request, user)
+            if account_type == 'user':
+                return redirect('user_dashboard')  # replace 'user_dashboard' with your user dashboard URL name
+            elif account_type == 'company':
+                return redirect('company_dashboard')  # replace 'company_dashboard' with your company dashboard URL name
+        else:
+            messages.error(request, 'Invalid login credentials')
+
+    return render(request, 'jobs/login.html') 
 
 def sign_up(request):
     if request.method == 'POST':
@@ -45,6 +62,6 @@ def sign_up(request):
     else:
         form = UserSignUpForm()  # Default to user form
 
-    return render(request, 'jobs/sign_up.html', {
+    return render(request, 'jobs/signup.html', {
         'form': form,
     })
