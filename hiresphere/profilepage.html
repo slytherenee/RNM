@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireSphere - Find Your Next Opportunity!</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@400;700&display=swap');
+
+        /* Reset some default styles */
+        body, h1, h2, h3, h4, p, a, input, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        html, body {
+            height: 100%;
+            font-family: 'Merriweather', serif; /* Body font */
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        /* Container styling */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: #6b6e70;
+            color: white;
+            padding: 20px 0;
+            font-family: 'Poppins', sans-serif; /* Header font */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0; /* Reset margin */
+            padding: 0; /* Reset padding */
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px; /* Adjust font size as needed */
+        }
+
+        body {
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-top: 60px; /* Add margin to avoid being hidden behind the header */
+        }
+
+        /* Profile Form */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 20px;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        input, textarea, select {
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background: #0077b5;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        button:hover {
+            background: #005582;
+        }
+
+        .qualifications {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .qualifications label {
+            display: flex;
+            align-items: center;
+        }
+
+        .qualifications input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">HireSphere</h1>
+            <nav>
+                <ul>
+                    <li><a href="search-job.html" target="_blank">Search a Job</a></li>
+                    <li><a href="post-job.html" target="_blank">Post a Job</a></li>
+                    <li><a href="feedback.html" target="_blank">Feedback</a></li>
+                    <li><a href="profile.html" target="_blank">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Profile Form -->
+        <div class="container">
+            <h1>User Profile</h1>
+            <form id="profileForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="aboutMe">About Me:</label>
+                <textarea id="aboutMe" name="aboutMe" rows="4" required></textarea>
+
+                <label for="resume">Upload CV/Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+                <h2>Qualifications</h2>
+                <div class="qualifications">
+                    <label><input type="checkbox" name="qualifications" value="bachelors"> Bachelor's Degree</label>
+                    <label><input type="checkbox" name="qualifications" value="masters"> Master's Degree</label>
+                    <label><input type="checkbox" name="qualifications" value="phd"> PhD</label>
+                    <label><input type="checkbox" name="qualifications" value="experience"> 5+ Years Experience</label>
+                    <label><input type="checkbox" name="qualifications" value="certification"> Relevant Certifications</label>
+                </div>
+
+                <button type="submit">Save Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HireSphere. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Profile saved successfully!');
+            // Add your form submission logic here
+        });
+    </script>
+</body>
+</html>
+
