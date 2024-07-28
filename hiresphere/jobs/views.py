@@ -9,9 +9,8 @@ def index(request):
     jobs = Job.objects.all()
     return render(request, 'jobs/hack2.html', {'jobs': jobs})
 
-def job_detail(request, job_id):
-    job = get_object_or_404(Job, id=job_id)
-    return render(request, 'jobs/job_detail.html', {'job': job})
+def job_detail(request):
+    return render(request, 'jobs/jobdetails.html')
 
 def create_job(request):
     if request.method == 'POST':

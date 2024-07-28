@@ -7,4 +7,5 @@ urlpatterns = [
     path('job/create/', views.create_job, name='create_job'),
     path('sign-up/', views.sign_up, name='signup'),
     path('log-in/', views.login, name='login'),
+    path('info/',views.job_detail, name='detail'),
 ]
