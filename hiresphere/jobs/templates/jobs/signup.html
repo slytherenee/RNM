@@ -163,8 +163,27 @@ footer {
               color: white;
               cursor: pointer;
           }
+          .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container form {
+            width: 50%;
+        }
+
+        .company-fields,
+        .user-fields {
+            display: none;
+        }
+
+        .form-container button:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
     </style>
-<script>
+    <script>
         function toggleFields() {
             const accountType = document.getElementById('account_type').value;
             const companyFields = document.getElementById('company_fields');
@@ -183,6 +202,7 @@ footer {
             toggleFields();
         });
     </script>
+</head>
 <body>
     <!-- Header -->
     <header>
@@ -199,14 +219,13 @@ footer {
         </div>
     </header>
     <div class="main-container">
-
-<!-- CODE HERE!! -->
-<!-- Sign Up -->
- <section id="signup" class="signup">
+        <!-- Sign Up -->
+        <section id="signup" class="signup">
             <div class="container">
                 <h2>Sign Up</h2>
                 <p>Create your account to find your next opportunity!</p>
-                <form>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
                     <label for="account_type">Account Type:</label>
                     <select id="account_type" name="account_type" onchange="toggleFields()" required>
                         <option value="user">User</option>
@@ -232,29 +251,28 @@ footer {
                 </form>
             </div>
         </section>
-
-        
     </div>
-        <!-- Contact -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <p>Have questions? Reach out to us!</p>
-                <form>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
-        </section>
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us!</p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
     <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2024 HireSphere. All rights reserved.</p>
         </div>
     </footer>
+</body>
 </html>
