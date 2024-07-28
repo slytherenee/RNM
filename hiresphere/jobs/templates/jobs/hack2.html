@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -284,8 +285,8 @@
                 <h2>Find Your Next Career Opportunity!</h2>
                 <p>Connect with employers and discover your dream job today.</p>
                 <div class="button-container">
-                    <a href="#sign-up" class="sign-up">Sign Up</a>
-                    <a href="#log-in" class="log-in">Log In</a>
+                    <a href="{% url 'signup' %}" class="sign-up">Sign Up</a>
+                    <a href="{% url 'login' %}"  class="log-in">Log In</a>
                 </div>
             </div>
         </div>

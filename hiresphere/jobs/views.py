@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Job, Company
 from django.http import HttpResponse
 
-def job_list(request):
+def index(request):
     jobs = Job.objects.all()
     return render(request, 'jobs/hack2.html', {'jobs': jobs})
 
@@ -15,3 +15,9 @@ def create_job(request):
         # Add logic to handle job creation form submission
         return HttpResponse("Job created")
     return render(request, 'jobs/create_job.html')
+
+def sign_up(request):
+    return render(request, 'jobs/signup.html')
+
+def log_in(request):
+    return render(request, 'jobs/login.html')
